@@ -1,0 +1,41 @@
+Instructions for Setting Up Google API Credentials and Sharing Google Sheet:
+
+1. Create a Google Cloud Project:
+   - Go to https://console.cloud.google.com/
+   - Click on "Select a project" > "New Project"
+   - Enter a project name and click "Create"
+
+2. Enable Google Sheets API:
+   - In the Google Cloud Console, go to "APIs & Services" > "Library"
+   - Search for "Google Sheets API"
+   - Click on it and then click "Enable"
+
+3. Create Credentials:
+   - Go to "APIs & Services" > "Credentials"
+   - Click "Create Credentials" > "OAuth client ID"
+   - Configure the consent screen if prompted (set user type to External, fill required fields, save)
+   - Choose "Desktop app" as the application type
+   - Name it and click "Create"
+   - Download the JSON file and save it as "credentials.json" in the same directory as the script
+
+4. Run the Script for the First Time:
+   - When you run the script, it will open a browser window to authorize access
+   - After authorization, a "token.pickle" file will be created to store access tokens
+
+5. Share Your Google Sheet:
+   - Open your Google Sheet
+   - Click "Share"
+   - Add the client_email from the "credentials.json" file (found under "client_email" key)
+   - Give Editor access and save
+
+6. Run the Script:
+   - Use the command:
+     python3 upwork_scraper.py --niche "your niche" --sheet_id "your_google_sheet_id"
+   - The script will start scraping and appending data to your sheet
+
+Note:
+- Replace "your niche" with the category you want to scrape.
+- Replace "your_google_sheet_id" with the ID from your Google Sheet URL.
+- The script runs continuously with a default delay of 5 minutes between scrapes.
+
+If you need help with any step, feel free to ask.
